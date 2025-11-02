@@ -1,0 +1,15 @@
+# Runtime dependencies
+requests>=2.31.0
+pyyaml>=6.0
+pydantic>=2.0.0
+python-dateutil>=2.8.0
+pyarrow>=14.0.0
+
+# IO formats (placeholders, not used yet)
+# The following are left commented to avoid bloat; add later when needed:
+# openpyxl  # for .xlsx, .xlsm
+# pyxlsb    # for .xlsb
+# pandas    # for additional data manipulation
+# beautifulsoup4  # for HTML link discovery
+# lxml      # for XML/HTML parsing
+

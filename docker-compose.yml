@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  radar-data-pipeline:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: radar-data-pipeline:latest
+    volumes:
+      # Mount local repo for development
+      - ./src:/app/src
+      - ./configs:/app/configs
+      - ./data:/app/data  # for local file development
+    environment:
+      - PYTHONPATH=/app/src
+    # Override command as needed
+    command: python -m radar_data.interface.cli.runner --help
+

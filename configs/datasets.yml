@@ -1,0 +1,38 @@
+# Dataset configuration examples
+# TODO: Add real URLs and configurations when implementing parsers
+
+datasets:
+  - id: example_bcra_reservas
+    provider: BCRA
+    name: "BCRA International Reserves"
+    source:
+      type: static_url
+      url: ""  # TODO: Add real URL
+      sheet: ""  # For Excel files, specify sheet name
+      start_cell: ""  # Optional: start reading from specific cell (e.g., "A2")
+      columns:
+        date: ""  # Column name or index for date field
+        value: ""  # Column name or index for value field
+    normalize:
+      internal_series_code: "BCRA_RESERVES"
+      unit: "USD"
+      frequency: "daily"
+    quality_profile: "default_daily"
+
+  - id: example_indec_ipc
+    provider: INDEC
+    name: "INDEC Consumer Price Index"
+    source:
+      type: static_url
+      url: ""  # TODO: Add real URL
+      sheet: ""  # For Excel files
+      start_cell: ""
+      columns:
+        date: ""
+        value: ""
+    normalize:
+      internal_series_code: "INDEC_IPC"
+      unit: "index_base_100"
+      frequency: "monthly"
+    quality_profile: "default_monthly"
+
